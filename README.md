@@ -1,3 +1,11 @@
+# Angebotsassistent
+
+**Storybook (live):** https://angebotsassistent-storybook.netlify.app
+
+Browse the design tokens (Foundations → Tokens) and components such as the ConfidenceBadge. The site is rebuilt by deploying this repo to Netlify (settings in `netlify.toml`).
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
