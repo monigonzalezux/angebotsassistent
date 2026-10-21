@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+/* Design tokens from Figma ("Design System" page). Keep names in sync with the Figma variables.
+   "static" always outputs every token, so the Storybook token page can read them all. */
+@theme static {
+  /* Neutral */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-400: #9ca3af;
+  --color-gray-600: #4b5563;
+  --color-gray-900: #111827;
+
+  /* Brand */
+  --color-brand-primary: #2f46c8;
+
+  /* Confidence */
+  --color-confidence-high: #15803d;
+  --color-confidence-check: #c27803;
+  --color-confidence-no-match: #6b7280;
+
+  /* Confidence tints: badge backgrounds only, not statuses */
+  --color-confidence-tint-high: #eaf7ee;
+  --color-confidence-tint-check: #fef4de;
+  --color-confidence-tint-no-match: #f3f4f6;
+
+  /* Spacing: replaces Tailwind's default scale, so p-16 means 16px like Figma's Spacing/16 */
+  --spacing-*: initial;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+}
