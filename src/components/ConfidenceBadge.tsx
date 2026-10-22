@@ -19,7 +19,7 @@ export function ConfidenceBadge({ status }: ConfidenceBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center gap-4 rounded px-8 py-4 text-xs font-medium whitespace-nowrap text-gray-900 ${badge}`}
+      className={`inline-flex items-center gap-4 rounded-full px-8 py-4 text-xs font-medium whitespace-nowrap text-gray-900 ${badge}`}
     >
       <span aria-hidden="true" className={`size-[6px] shrink-0 rounded-full ${dot}`} />
       {label}

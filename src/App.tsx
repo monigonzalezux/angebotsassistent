@@ -6,8 +6,8 @@ function App() {
       <h1 className="text-4xl font-bold text-gray-900">Angebotsassistent</h1>
       <p className="text-gray-600">Vite + React + TypeScript + Tailwind + Storybook</p>
       <div className="flex gap-12">
-        <Button label="Neues Angebot" />
-        <Button label="Abbrechen" variant="secondary" />
+        <Button>Neues Angebot</Button>
+        <Button variant="secondary">Abbrechen</Button>
       </div>
     </main>
   )
