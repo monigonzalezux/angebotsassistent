@@ -28,3 +28,14 @@ storybook-static
 
 # Netlify
 .netlify
+
+# Component library build (Claude Design sync)
+dist-lib
+
+# Claude Design sync: build output and local working state
+.ds-sync/
+ds-bundle/
+.design-sync/sb-reference/
+.design-sync/learnings/
+.design-sync/.cache/
+.design-sync/node_modules

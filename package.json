@@ -3,9 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "module": "./dist-lib/index.js",
+  "types": "./dist-lib/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:lib": "vite build -c vite.lib.config.ts && tsc -p tsconfig.lib.json",
     "lint": "oxlint",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

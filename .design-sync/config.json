@@ -1,0 +1,29 @@
+{
+  "pkg": "angebotsassistent",
+  "globalName": "Angebotsassistent",
+  "shape": "storybook",
+  "storybookConfigDir": ".storybook",
+  "storybookStatic": ".design-sync/sb-reference",
+  "buildCmd": "npm run build:lib",
+  "entry": "./dist-lib/index.js",
+  "cssEntry": "dist-lib/index.css",
+  "titleMap": {
+    "Tokens": null
+  },
+  "overrides": {
+    "Button": {
+      "cardMode": "column",
+      "skip": [
+        "components-button--hover",
+        "components-button--pressed",
+        "components-button--keyboard-focus",
+        "components-button--all-combinations"
+      ]
+    }
+  },
+  "dtsPropsFor": {
+    "Button": "/** \"primary\" (default) for the main action, \"secondary\" for the alternative. */ variant?: \"primary\" | \"secondary\"; /** Height 24 / 36 (default) / 48px. */ size?: \"sm\" | \"md\" | \"lg\"; /** Button text. */ children?: React.ReactNode; /** Half opacity, no hover/press, not clickable. */ disabled?: boolean; /** Defaults to \"button\" so it never submits a form by accident. */ type?: \"button\" | \"submit\" | \"reset\"; onClick?: React.MouseEventHandler<HTMLButtonElement>; /** Needed when several buttons share the same text, e.g. \"Universaldübel UX 10 x 60 übernehmen\". */ \"aria-label\"?: string; id?: string; style?: React.CSSProperties;",
+    "SuggestionRow": "/** What the customer asked for, e.g. \"Sechskantschraube M8 x 40, verzinkt\". */ request: string; /** Tender position number, e.g. \"01.0010\". */ position?: string; /** null when the tender gives no quantity. */ quantity?: number | null; /** e.g. \"Stk\", \"m\", \"m²\", \"Sack\". */ unit?: string; /** \"high\" | \"check\": requires `suggestion`. \"no-match\": no product found. \"error\": the line could not be read; requires `error`, shows no badge. */ confidence: \"high\" | \"check\" | \"no-match\" | \"error\"; /** Required when confidence is \"high\" or \"check\"; not allowed otherwise. */ suggestion?: { name: string; sku: string }; /** Required when confidence is \"error\", e.g. \"Menge fehlt in der Ausschreibung\". */ error?: string; /** \"Übernehmen\" button (high/check). */ onAccept?: () => void; /** \"Ändern\" button (high/check). */ onChange?: () => void; /** \"Produkt suchen\" button (no-match). */ onSearch?: () => void; /** \"Zeile bearbeiten\" button (error). */ onEdit?: () => void;"
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}

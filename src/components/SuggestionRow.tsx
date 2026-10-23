@@ -5,12 +5,12 @@ import { ConfidenceBadge } from './ConfidenceBadge'
 // how confident the match is, and what the user can do about it.
 // "error" means the line itself couldn't be read (e.g. missing quantity), so no match was attempted.
 
-type Product = {
+export type Product = {
   name: string
   sku: string
 }
 
-type SuggestionRowProps = {
+export type SuggestionRowProps = {
   request: string
   position?: string
   quantity?: number | null
