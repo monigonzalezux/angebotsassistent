@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes } from 'react'
 export type ButtonVariant = 'primary' | 'secondary'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
-type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> & {
+export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> & {
   variant?: ButtonVariant
   size?: ButtonSize
 }

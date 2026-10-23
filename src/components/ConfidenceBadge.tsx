@@ -3,7 +3,7 @@
 // no-match = no confident match found.
 export type ConfidenceStatus = 'high' | 'check' | 'no-match'
 
-type ConfidenceBadgeProps = {
+export type ConfidenceBadgeProps = {
   status: ConfidenceStatus
 }
 
