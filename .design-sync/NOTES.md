@@ -13,10 +13,12 @@
 - Button: auto-extracted `.d.ts` dropped the native button attributes (`disabled`, `type`, `onClick`, `aria-label`) inherited from `ButtonHTMLAttributes` -> hand-written in `cfg.dtsPropsFor.Button`. Keep in sync with `src/components/Button.tsx`.
 
 ## Re-sync risks
-- Not uploaded yet: first sync (2026-10-22) was built and verified locally only, because DesignSync authorization failed in the desktop app's Code tab even after a successful `/design-login`. No `projectId` in config, no `_ds_sync.json` anchor remote, so the next sync is a full first-sync (create project, re-verify all).
+- Uploaded 2026-10-24 to project "Angebotsassistent" (`projectId` in config, https://claude.ai/design/p/7f4ef018-28d3-4406-bf83-4e15ae0eec45), anchored by `_ds_sync.json`. Next sync is a re-sync (storybook §7 driver with `--remote`). The 2026-10-22 failure was DesignSync auth in the desktop Code tab; on 2026-10-24 `/design-login` then retry worked.
 - `cfg.dtsPropsFor` for Button and SuggestionRow is hand-written: it goes stale silently when those components' props change. Re-check it against `dist-lib/components/*.d.ts` on every sync.
 - `.design-sync/conventions.md` lists token names and component props by hand: re-validate against `ds-bundle/_ds_bundle.css` and the `.d.ts` files each sync.
 - Button's Hover / Pressed / Keyboard Focus / All Combinations stories are skipped (Storybook addon only). New Button stories that use `parameters.pseudo` need the same skip.
 - New stories in `src/data`-driven lists (SuggestionRow All Tender Lines) depend on `src/data/tenderLines.ts`; editing that data re-grades SuggestionRow.
 - No webfont ships: everything renders in the system sans-serif (`--font-sans`). Figma names Inter, but the app doesn't load it either, so previews and app agree. If Inter is added to the app, add it via `cfg.extraFonts`.
+- Button has 8 stories, above compare's default cap of 6: first sync graded all 8 via `compare.mjs --max-stories 8`. New Button stories past 8 need the flag raised again.
+- SuggestionRow `All Tender Lines`: the preview capture is clipped at the capture viewport (~700px) while the storybook shot is full-page; graded `match` on the visible 10 rows (framing only). Re-graders: don't mistake the clip for missing rows.
 - Toolchain at first sync: Storybook 10.6.3, Tailwind 4.3.3, Vite 8.3.4, React 19.3.1, Node 24.22.0.
